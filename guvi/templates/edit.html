@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="{% static 'login.css' %}">
+    <title>Document</title>
+</head>
+<body>
+
+    <form method="post" action="/profile">
+        {%csrf_token%}
+        First name:<br>
+        <input class="form" type="text" placeholder="First name" name="first"><br>
+        Last name:<br>
+        <input class="form" type="text" placeholder="Last name" name="last"><br>
+        Date of birth:<br>
+        <input class="form" type="date" name="dob"><br>
+        mobile:<br>
+
+        <input class="tel1" type="tel" maxlength="3" value="+" size="1px">
+        <input class="tel" type="tel" placeholder="maximum 10" name="mobile"><br>
+        Password:<br>
+        <input class="form" type="password" minlength="6" name="p">
+        <p class="para">should be minimum 6 characters , include atleast 1 special symbol(!,@,#,$,...) ,1 upper case and 1 numeric number </p>
+        Confirm Password:<br>
+        <input class="form" type="password" minlength="6" name="pc">
+
+        <input class="button " type="submit" value="Update">
+
+    </form>
+        </div>
+
+</body>
+</html>

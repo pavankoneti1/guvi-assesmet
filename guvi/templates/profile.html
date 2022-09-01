@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="{% static 'pro.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>profile</title>
+</head>
+
+<body>
+{% for i in mymembers %}
+<div class="container">
+        <center><h3>Profile</h3></center>
+    <form action="/edit">
+        First name:
+        <div class="division div">
+            <div class="inner"></div>{{i.first}}
+        </div>
+        Last name:
+        <div class="division div">
+            <div class="inner"> </div>{{i.last}}
+        </div>
+        User:
+        <div class="division">
+            <div class="inner"></div>{{i.user}}
+        </div>
+
+        Date of birth:
+        <div class="division div">
+            <div class="inner">{{i.dob}}
+            </div>
+        </div>
+
+        Age:
+        <div class="division div">
+            <div class="inner">{{i.age}}
+            </div>
+        </div>
+
+        Contact:
+        <div class="division div">
+            <div class="inner">{{i.contact}}
+            </div>
+        </div>
+
+        <input class="button" type="submit" value="Edit">
+        </form>
+    </div>
+</div>
+{% endfor %}
+</body>
+</html>
